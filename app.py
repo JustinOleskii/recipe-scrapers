@@ -10,7 +10,6 @@ def scrape():
     if not url:
       return jsonify({'error': 'URL is required'}), 400
     
-    print('got ', url)
     html = requests.get(url, headers={"User-Agent": f"MealMind"}).content
     scraper = scrape_html(html, org_url=url)
     data = {
